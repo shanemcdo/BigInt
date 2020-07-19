@@ -15,7 +15,6 @@ private:
     BigInt multiply(BigInt other);
     void clean_leading_zeros();
 public:
-    BigInt pow(BigInt other);
     // constructors
     BigInt();
     BigInt(std::string s);
@@ -70,6 +69,7 @@ public:
     // other
     BigInt abs();
     long long length();
+    BigInt pow(BigInt other);
 };
 
 #endif //BIG_INT_H

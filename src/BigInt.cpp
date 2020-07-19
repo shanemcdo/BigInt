@@ -68,14 +68,6 @@ BigInt BigInt::multiply(BigInt other){
     return total;
 }
 
-BigInt BigInt::pow(BigInt other){
-    BigInt result = 1;
-    for(BigInt i = 0; i < other; i += 1){
-        result *= *this;
-    }
-    return result;
-}
-
 void BigInt::clean_leading_zeros(){
     std::string new_value = value;
     for(int i = 0; i < value.length() - 1; i++){
@@ -371,4 +363,12 @@ BigInt BigInt::abs(){
 
 long long BigInt::length(){
     return value.length();
+}
+
+BigInt BigInt::pow(BigInt other){
+    BigInt result = 1;
+    for(BigInt i = 0; i < other; i += 1){
+        result *= *this;
+    }
+    return result;
 }
