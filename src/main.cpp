@@ -26,5 +26,10 @@ int main(){
     std::cout << BigInt(500) - BigInt(-200) << std::endl;
     std::cout << BigInt(-500) - BigInt(-200) << std::endl;
     std::cout << BigInt(1) - BigInt("1000000000000000000000000000000000000000000000000") << std::endl;
+    a = BigInt(12345);
+    a += BigInt(54321);
+    std::cout << a << std::endl;
+    a -= BigInt(9999999);
+    std::cout << a << std::endl;
 	return 0;
 }
