@@ -71,7 +71,7 @@ BigInt BigInt::multiply(BigInt other){
 BigInt BigInt::pow(BigInt other){
     BigInt result = 1;
     for(BigInt i = 0; i < other; i += 1){
-        result *= other;
+        result *= *this;
     }
     return result;
 }

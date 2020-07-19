@@ -3,6 +3,9 @@
 
 int main(){
     BigInt a(123456);
+    for(int i = 0; i < 200; i++){
+        std::cout << i << ": " << BigInt(2).pow(i) << std::endl;
+    }
     std::cout << a << " " << -a << std::endl;
     a = -a;
     std::cout << a << std::endl;
