@@ -151,18 +151,18 @@ bool BigInt::operator!=(BigInt other){
 BigInt BigInt::operator+(BigInt other){
     if(positive){
         if(other.get_positive()){ // a + b
-            if(*this > other) return add(other); // a + b
+            if(abs() > other.abs()) return add(other); // a + b
             else return other.add(*this); // b + a
         } else { // a + ( - b ) == a - b
-            if(*this > other) return subtract(other); // a - b
+            if(abs() > other.abs()) return subtract(other); // a - b
             else return -other.subtract(*this); // a - b == - ( b - a)
         }
     } else {
         if(other.get_positive()){ // ( - a ) + b == b - a
-            if(*this > other) return -subtract(other); // b - a == -(a - b)
+            if(abs() > other.abs()) return -subtract(other); // b - a == -(a - b)
             else return other.subtract(*this);// b - a
         } else { // ( - a) + ( - b) == - ( a + b )
-            if(*this > other) return -add(other); // - ( a + b )
+            if(abs() > other.abs()) return -add(other); // - ( a + b )
             else return -other.add(*this); // - ( b + a )
         }
     }
