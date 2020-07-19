@@ -59,5 +59,12 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = a != 10000;
     std::cout << (b ? "true" : "false") << std::endl;
+    std::cout << a << std::endl;
+    a += 10;
+    a += "10";
+    std::cout << a << std::endl;
+    a -= 20;
+    a -= "99999999999999999999999999999999999999999999";
+    std::cout << a << std::endl;
 	return 0;
 }
