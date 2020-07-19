@@ -31,5 +31,7 @@ int main(){
     std::cout << a << std::endl;
     a -= BigInt(9999999);
     std::cout << a << std::endl;
+    a = 91231312312312;
+    std::cout << a << std::endl;
 	return 0;
 }

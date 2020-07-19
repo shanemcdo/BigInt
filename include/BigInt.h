@@ -37,6 +37,7 @@ public:
     BigInt operator-(BigInt other);
     BigInt* operator+=(BigInt other);
     BigInt* operator-=(BigInt other);
+    BigInt* operator=(long long l);
     // other
     BigInt abs();
 };

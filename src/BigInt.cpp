@@ -204,6 +204,11 @@ BigInt* BigInt::operator-=(BigInt other){
     return this;
 }
 
+BigInt* BigInt::operator=(long long l){
+    set_value(l);
+    return this;
+}
+
 BigInt BigInt::abs(){
     if(positive) return *this;
     return -(*this);
