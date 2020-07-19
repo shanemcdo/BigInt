@@ -217,6 +217,14 @@ BigInt BigInt::operator+(BigInt other){
     }
 }
 
+BigInt BigInt::operator+(std::string s){
+    return *this + BigInt(s);
+}
+
+BigInt BigInt::operator+(long long l){
+    return *this + BigInt(l);
+}
+
 BigInt BigInt::operator-(BigInt other){
     if(positive){
         if(other.get_positive()){ // a - b
@@ -235,6 +243,14 @@ BigInt BigInt::operator-(BigInt other){
             else return other.subtract(*this); // -( -( b - a )) == b - a
         }
     }
+}
+
+BigInt BigInt::operator-(std::string s){
+    return *this - BigInt(s);
+}
+
+BigInt BigInt::operator-(long long l){
+    return *this - BigInt(l);
 }
 
 BigInt* BigInt::operator+=(BigInt other){
