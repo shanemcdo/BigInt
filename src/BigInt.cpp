@@ -148,6 +148,12 @@ bool BigInt::operator!=(BigInt other){
     return !(*this == other);
 }
 
+BigInt BigInt::operator-(){
+    BigInt new_BigInt = *this;
+    new_BigInt.set_positive(!new_BigInt.get_positive());
+    return new_BigInt;
+}
+
 BigInt BigInt::operator+(BigInt other){
     if(positive){
         if(other.get_positive()){ // a + b
@@ -166,12 +172,6 @@ BigInt BigInt::operator+(BigInt other){
             else return -other.add(*this); // - ( b + a )
         }
     }
-}
-
-BigInt BigInt::operator-(){
-    BigInt new_BigInt = *this;
-    new_BigInt.set_positive(!new_BigInt.get_positive());
-    return new_BigInt;
 }
 
 BigInt BigInt::abs(){
