@@ -14,8 +14,15 @@ BigInt::BigInt(long long l){
 }
 
 void BigInt::set_value(std::string s){
-    value = s;
-    positive = (s[0] != '-');
+    positive = true;
+    if(s.length() == 0){
+        value = "0";
+    } else if(s[0] == '-'){
+        value = s.substr(1);
+        positive = false;
+    } else {
+        value = s;
+    }
 }
 
 void BigInt::set_value(long long l){
