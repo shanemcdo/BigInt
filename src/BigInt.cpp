@@ -167,3 +167,8 @@ BigInt BigInt::operator+(BigInt other){
         }
     }
 }
+
+BigInt BigInt::operator-(){
+    positive = !positive;
+    return this*;
+}

@@ -33,6 +33,7 @@ public:
     bool operator==(BigInt other);
     bool operator!=(BigInt other);
     BigInt operator+(BigInt other);
+    Bigint operator-();
 };
 
 #endif //BIG_INT_H
