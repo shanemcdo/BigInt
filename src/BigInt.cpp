@@ -1,5 +1,22 @@
 #include"BigInt.h"
 
+// private
+
+BigInt BigInt::add(BigInt other){
+    unsigned long long zeros = value.length() - other.get_value().length();
+    std::string aligned = other.get_value();
+    for(int i = 0; i < zeros; i++){
+        aligned += '0';
+    }
+    std::string result = "";
+    for(int i = 0; i < value.length(); i++){
+        result += std::to_string(std::stoi(value.substr(i, 1)) + std::stoi(aligned.substr(i, 1)));
+    }
+    return BigInt(result);
+}
+
+// public
+
 BigInt::BigInt(){
     value = "0";
     positive = true;
@@ -39,17 +56,4 @@ std::string BigInt::get_value(){
 
 bool BigInt::get_positive(){
     return positive;
-}
-
-BigInt BigInt::add(BigInt other){
-    unsigned long long zeros = value.length() - other.get_value().length();
-    std::string aligned = other.get_value();
-    for(int i = 0; i < zeros; i++){
-        aligned += '0';
-    }
-    std::string result = "";
-    for(int i = 0; i < value.length(); i++){
-        result += std::to_string(std::stoi(value.substr(i, 1)) + std::stoi(aligned.substr(i, 1)));
-    }
-    return BigInt(result);
 }

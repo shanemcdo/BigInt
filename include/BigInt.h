@@ -7,6 +7,7 @@ class BigInt{
 private:
     std::string value;
     bool positive;
+    BigInt add(BigInt other);
 public:
     BigInt();
     BigInt(std::string s);
@@ -16,7 +17,6 @@ public:
     void set_positive(bool b);
     std::string get_value();
     bool get_positive();
-    BigInt add(BigInt other);
 };
 
 #endif //BIG_INT_H
