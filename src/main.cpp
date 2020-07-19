@@ -20,7 +20,7 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(50) != BigInt(50);
     std::cout << (b ? "true" : "false") << std::endl;
-    a = BigInt(500) + BigInt(100);
+    a = BigInt(500) + BigInt(-100);
     std::cout << a << std::endl;
 	return 0;
 }
