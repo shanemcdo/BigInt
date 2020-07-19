@@ -66,5 +66,8 @@ int main(){
     std::cout << a << std::endl;
     std::cout << BigInt(10) - "10" << std::endl;
     std::cout << -BigInt(-99999999) * -500 << std::endl;
+    a = "99999999999999999999999999999999";
+    a *= "99999999999999999999999999999999";
+    std::cout << a << std::endl;
 	return 0;
 }

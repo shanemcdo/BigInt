@@ -61,6 +61,9 @@ public:
     BigInt* operator-=(BigInt other);
     BigInt* operator-=(std::string s);
     BigInt* operator-=(long long l);
+    BigInt* operator*=(BigInt other);
+    BigInt* operator*=(std::string s);
+    BigInt* operator*=(long long l);
     BigInt* operator=(std::string s);
     BigInt* operator=(long long l);
     // other
