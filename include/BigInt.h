@@ -9,6 +9,7 @@ private:
     std::string value;
     bool positive;
     std::string align(unsigned long long zeros);
+    std::string align_left(unsigned long long zeros);
     BigInt add(BigInt other);
     BigInt subtract(BigInt other);
     void clean_leading_zeros();

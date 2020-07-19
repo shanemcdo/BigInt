@@ -10,6 +10,14 @@ std::string BigInt::align(unsigned long long zeros){
     return new_value;
 }
 
+std::string BigInt::align_left(unsigned long long zeros){
+    std::string new_value = value;
+    for(int i = 0; i < zeros; i++){
+        new_value += '0';
+    }
+    return new_value;
+}
+
 BigInt BigInt::add(BigInt other){ //only functional when the second number is smaller
     unsigned long long zeros = value.length() - other.get_value().length();
     std::string aligned = other.align(zeros);
