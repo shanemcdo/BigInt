@@ -174,11 +174,6 @@ BigInt BigInt::operator+(BigInt other){
     }
 }
 
-BigInt* BigInt::operator+=(BigInt other){
-    *this = *this + other;
-    return this;
-}
-
 BigInt BigInt::operator-(BigInt other){
     if(positive){
         if(other.get_positive()){ // a - b
@@ -197,6 +192,11 @@ BigInt BigInt::operator-(BigInt other){
             else return other.subtract(*this); // -( -( b - a )) == b - a
         }
     }
+}
+
+BigInt* BigInt::operator+=(BigInt other){
+    *this = *this + other;
+    return this;
 }
 
 BigInt* BigInt::operator-=(BigInt other){
