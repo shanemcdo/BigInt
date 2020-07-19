@@ -29,6 +29,8 @@ public:
     bool operator<(std::string s);
     bool operator<(long long l);
     bool operator>(BigInt other);
+    bool operator>(std::string s);
+    bool operator>(long long l);
     bool operator<=(BigInt other);
     bool operator>=(BigInt other);
     bool operator==(BigInt other);
