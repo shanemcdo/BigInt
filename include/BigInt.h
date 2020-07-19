@@ -5,9 +5,9 @@
 
 class BigInt{
 private:
-public:
     std::string value;
     bool positive;
+public:
     BigInt();
     BigInt(std::string s);
 };
