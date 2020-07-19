@@ -387,7 +387,7 @@ long long BigInt::length(){
 
 BigInt BigInt::pow(BigInt other){
     BigInt result = 1;
-    for(BigInt i = 0; i < other; i += 1){
+    for(BigInt i = 0; i < other; i++){
         result *= *this;
     }
     return result;
