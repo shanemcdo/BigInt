@@ -2,22 +2,26 @@
 
 // private
 
-BigInt BigInt::align(unsigned long long zeros){
+std::string BigInt::align(unsigned long long zeros){
     std::string new_value = value;
     for(int i = 0; i < zeros; i++){
         new_value = '0' + new_value;
     }
-    return BigInt(new_value);
+    return new_value;
 }
 
 BigInt BigInt::add(BigInt other){ //only functional when the second number is smaller
     unsigned long long zeros = value.length() - other.get_value().length();
-    std::string aligned = other.align(zeros).get_value();
+    std::string aligned = other.align(zeros);
     std::string result = "";
     for(int i = 0; i < value.length(); i++){
         result += std::to_string(std::stoi(value.substr(i, 1)) + std::stoi(aligned.substr(i, 1)));
     }
     return BigInt(result);
+}
+
+BigInt BigInt::add(long long l){
+    return add(BigInt(l));
 }
 
 // public
