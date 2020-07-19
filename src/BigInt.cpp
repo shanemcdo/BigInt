@@ -30,8 +30,6 @@ BigInt BigInt::subtract(BigInt other){
     std::string result = "";
     short carry = 0;
     for(int i = value.length() - 1; i >= 0; i--){
-        // short a = std::stoi(value.substr(i, 1));
-        // short b = std::stoi(aligned.substr(i, 1));
         short x = std::stoi(value.substr(i, 1)) - std::stoi(aligned.substr(i, 1)) - carry;
         if(x < 0){
             x += 10;
