@@ -10,6 +10,7 @@ private:
 public:
     BigInt();
     BigInt(std::string s);
+    BigInt(long long l);
 };
 
 #endif //BIG_INT_H

@@ -10,3 +10,7 @@ BigInt::BigInt(std::string s){
     positive = (s[0] != '-');
 }
 
+BigInt::BigInt(long long l){
+    value = std::to_string(l);
+    positive = (value[0] != '-');
+}
