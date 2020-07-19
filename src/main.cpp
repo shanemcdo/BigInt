@@ -3,7 +3,7 @@
 
 int main(){
     BigInt a(123456);
-    for(int i = 0; i < 200; i++){
+    for(int i = 0; i < 64; i++){
         std::cout << i << ": " << BigInt(2).pow(i) << std::endl;
     }
     std::cout << a << " " << -a << std::endl;
@@ -72,5 +72,11 @@ int main(){
     a = "99999999999999999999999999999999";
     a *= "99999999999999999999999999999999";
     std::cout << a << std::endl;
+    std::cout << a++ << std::endl;
+    std::cout << a << std::endl;
+    std::cout << a-- << std::endl;
+    std::cout << a << std::endl;
+    std::cout << ++a << std::endl;
+    std::cout << --a << std::endl;
 	return 0;
 }

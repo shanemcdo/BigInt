@@ -307,6 +307,26 @@ BigInt BigInt::operator*(long long l){
     return *this * BigInt(l);
 }
 
+BigInt BigInt::operator++(int i){
+    *this += 1;
+    return *this;
+}
+
+BigInt BigInt::operator--(int i){
+    *this -= 1;
+    return *this;
+}
+
+BigInt BigInt::operator++(){
+    *this += 1;
+    return *this;
+}
+
+BigInt BigInt::operator--(){
+    *this -= 1;
+    return *this;
+}
+
 BigInt* BigInt::operator+=(BigInt other){
     *this = *this + other;
     return this;
