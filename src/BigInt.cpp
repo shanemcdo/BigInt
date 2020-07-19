@@ -66,3 +66,11 @@ std::string BigInt::get_value(){
 bool BigInt::get_positive(){
     return positive;
 }
+
+std::ostream& operator<<(std::ostream& out, BigInt num){
+    if(!num.get_positive()){
+        out << '-';
+    }
+    out << num.get_value();
+    return out;
+}

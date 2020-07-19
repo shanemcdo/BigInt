@@ -22,6 +22,8 @@ public:
     void set_positive(bool b);
     std::string get_value();
     bool get_positive();
+    // operators
+    friend std::ostream& operator<<(std::ostream& out, BigInt num);
 };
 
 #endif //BIG_INT_H
