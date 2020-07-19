@@ -282,18 +282,18 @@ BigInt BigInt::operator-(long long l){
 BigInt BigInt::operator*(BigInt other){
     if(positive){
         if(other.get_positive()){ // a * b
-            if(abs() > other.abs()) return multiply(other); // a * b
+            if(length() > other.length()) return multiply(other); // a * b
             else return other.multiply(*this); // b * a
         }else{ // a * -( b )
-            if(abs() > other.abs()) return -multiply(other);
+            if(length() > other.length()) return -multiply(other);
             else return -other.multiply(*this);
         }
     }else{
         if(other.get_positive()){ // -( a ) * b
-            if(abs() > other.abs()) return -multiply(other);
+            if(length() > other.length()) return -multiply(other);
             else return -other.multiply(*this);
         }else{ // -( a ) * -( b ) == a * b
-            if(abs() > other.abs()) return multiply(other);
+            if(length() > other.length()) return multiply(other);
             else return other.multiply(*this);
         }
     }
