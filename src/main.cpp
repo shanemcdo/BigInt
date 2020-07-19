@@ -5,9 +5,10 @@ int main(){
     BigInt a(1000000000);
     // a = a.add(3);
     // a = a.subtract(987654321);
+    std::cout << a << " " << -a << std::endl;
+    a = -a;
     std::cout << a << std::endl;
-    std::cout << -a << std::endl;
-    std::cout << a << std::endl;
+    std::cout << a.abs() << " " << a.abs() << std::endl;
     bool b = BigInt(-12222) < BigInt(-12224);
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(22) > BigInt(-23);

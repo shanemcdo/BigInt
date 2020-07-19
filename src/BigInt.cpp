@@ -173,3 +173,8 @@ BigInt BigInt::operator-(){
     new_BigInt.set_positive(!new_BigInt.get_positive());
     return new_BigInt;
 }
+
+BigInt BigInt::abs(){
+    if(positive) return *this;
+    return -(*this);
+}

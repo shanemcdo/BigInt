@@ -34,6 +34,8 @@ public:
     bool operator!=(BigInt other);
     BigInt operator+(BigInt other);
     BigInt operator-();
+    // other
+    BigInt abs();
 };
 
 #endif //BIG_INT_H
