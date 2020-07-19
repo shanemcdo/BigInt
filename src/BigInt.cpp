@@ -124,6 +124,15 @@ bool BigInt::operator<(BigInt other){
     }
     return false;
 }
+
+bool BigInt::operator<(std::string s){
+    return *this < BigInt(s);
+}
+
+bool BigInt::operator<(long long l){
+    return *this < BigInt(l);
+}
+
 bool BigInt::operator>(BigInt other){
     return !(*this <= other);
 }

@@ -35,5 +35,9 @@ int main(){
     std::cout << a << std::endl;
     a = "99999999999999999999999999999999999999999999";
     std::cout << a << std::endl;
+    b = a < "5000";
+    std::cout << (b ? "true" : "false") << std::endl;
+    b = a < 5000;
+    std::cout << (b ? "true" : "false") << std::endl;
 	return 0;
 }
