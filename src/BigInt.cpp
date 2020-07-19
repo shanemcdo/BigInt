@@ -51,7 +51,7 @@ BigInt BigInt::subtract(BigInt other){
 }
 
 BigInt BigInt::multiply(BigInt other){
-    unsigned long long zeros = value.length() - other.get_value().length();
+    long long zeros = value.length() - other.get_value().length();
     std::string aligned = other.align(zeros);
     BigInt total = 0;
     for(int i = aligned.length() - 1; i >= zeros; i--){
@@ -63,7 +63,7 @@ BigInt BigInt::multiply(BigInt other){
             result = std::to_string(x % 10) + result;
         }
         result = std::to_string(carry) + result;
-        total += BigInt(result).align_left(i - 1);
+        total += BigInt(result).align_left(aligned.length() - i - 1);
     }
     return total;
 }
