@@ -33,5 +33,7 @@ int main(){
     std::cout << a << std::endl;
     a = 91231312312312;
     std::cout << a << std::endl;
+    a = "99999999999999999999999999999999999999999999";
+    std::cout << a << std::endl;
 	return 0;
 }

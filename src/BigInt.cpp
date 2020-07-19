@@ -209,6 +209,11 @@ BigInt* BigInt::operator=(long long l){
     return this;
 }
 
+BigInt* BigInt::operator=(std::string s){
+    set_value(s);
+    return this;
+}
+
 BigInt BigInt::abs(){
     if(positive) return *this;
     return -(*this);

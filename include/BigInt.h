@@ -38,6 +38,7 @@ public:
     BigInt* operator+=(BigInt other);
     BigInt* operator-=(BigInt other);
     BigInt* operator=(long long l);
+    BigInt* operator=(std::string s);
     // other
     BigInt abs();
 };
