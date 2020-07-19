@@ -6,7 +6,7 @@ int main(){
     // a = a.add(3);
     // a = a.subtract(987654321);
     std::cout << a << std::endl;
-    a.set_positive(false);
+    std::cout << -a << std::endl;
     std::cout << a << std::endl;
     bool b = BigInt(-12222) < BigInt(-12224);
     std::cout << (b ? "true" : "false") << std::endl;

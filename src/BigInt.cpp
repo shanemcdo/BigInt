@@ -169,6 +169,7 @@ BigInt BigInt::operator+(BigInt other){
 }
 
 BigInt BigInt::operator-(){
-    positive = !positive;
-    return this*;
+    BigInt new_BigInt = *this;
+    new_BigInt.set_positive(!new_BigInt.get_positive());
+    return new_BigInt;
 }
