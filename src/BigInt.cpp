@@ -155,11 +155,7 @@ BigInt BigInt::operator+(BigInt other){
             else return other.add(*this);
         } else { // a + ( - b ) == a - b
             if(*this > other) return subtract(other);
-            else{ // a - b == - ( b - a)
-                BigInt num = other.subtract(*this);
-                num.set_positive(false);
-                return num;
-            }
+            else return -other.subtract(*this); // a - b == - ( b - a)
         }
     } else {
         if(other.get_positive()){ // ( - a ) + b == b - a
