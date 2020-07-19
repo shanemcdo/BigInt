@@ -14,5 +14,7 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(50) == BigInt(50);
     std::cout << (b ? "true" : "false") << std::endl;
+    b = BigInt(50) != BigInt(50);
+    std::cout << (b ? "true" : "false") << std::endl;
 	return 0;
 }

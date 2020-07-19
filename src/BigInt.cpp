@@ -123,3 +123,7 @@ bool BigInt::operator>=(BigInt other){
 bool BigInt::operator==(BigInt other){
     return value == other.get_value() && positive == other.get_positive();
 }
+
+bool BigInt::operator!=(BigInt other){
+    return !(*this == other);
+}
