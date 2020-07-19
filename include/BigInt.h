@@ -74,6 +74,7 @@ public:
     BigInt abs();
     long long length();
     BigInt pow(BigInt other);
+    BigInt pow(std::string s);
 };
 
 #endif //BIG_INT_H

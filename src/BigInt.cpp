@@ -392,3 +392,7 @@ BigInt BigInt::pow(BigInt other){
     }
     return result;
 }
+
+BigInt BigInt::pow(std::string s){
+    return pow(BigInt(s));
+}
