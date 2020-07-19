@@ -21,7 +21,10 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(50) != BigInt(50);
     std::cout << (b ? "true" : "false") << std::endl;
-    a = BigInt(-500) + BigInt(-600);
-    std::cout << a << std::endl;
+    std::cout << BigInt(-500) + BigInt(-600) << std::endl;
+    std::cout << BigInt("-10000000000000000000000000000") + BigInt(-1) << std::endl;
+    std::cout << BigInt(500) - BigInt(-200) << std::endl;
+    std::cout << BigInt(-500) - BigInt(-200) << std::endl;
+    std::cout << BigInt(1) - BigInt("1000000000000000000000000000000000000000000000000") << std::endl;
 	return 0;
 }

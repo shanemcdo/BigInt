@@ -34,6 +34,7 @@ public:
     bool operator!=(BigInt other);
     BigInt operator-();
     BigInt operator+(BigInt other);
+    BigInt operator-(BigInt other);
     // other
     BigInt abs();
 };
