@@ -93,3 +93,21 @@ bool BigInt::operator<(BigInt other){
     }
     return false;
 }
+bool BigInt::operator>(BigInt other){
+    if(positive && !other.get_positive()) return true;
+    else if(!positive && other.get_positive()) return false;
+    unsigned long long len = value.length();
+    std::string other_value = other.get_value();
+    unsigned long long other_len = other_value.length();
+    if(len != other_len){
+        if(positive) return len > other_len;
+        else return len < other_len;
+    }
+    for(int i = 0; i < len; i++){
+        if(value[i] != other_value[i]){
+            if(positive) return value[i] > other_value[i];
+            else return value[i] < other_value[i];
+        }
+    }
+    return false;
+}
