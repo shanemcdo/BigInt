@@ -279,6 +279,34 @@ BigInt BigInt::operator-(long long l){
     return *this - BigInt(l);
 }
 
+BigInt BigInt::operator*(BigInt other){
+    if(positive){
+        if(other.get_positive()){ // a * b
+            if(abs() > other.abs()) return multiply(other); // a * b
+            else return other.multiply(*this); // b * a
+        }else{ // a * -( b )
+            if(abs() > other.abs()) return -multiply(other);
+            else return -other.multiply(*this);
+        }
+    }else{
+        if(other.get_positive()){ // -( a ) * b
+            if(abs() > other.abs()) return -multiply(other);
+            else return -other.multiply(*this);
+        }else{ // -( a ) * -( b ) == a * b
+            if(abs() > other.abs()) return multiply(other);
+            else return other.multiply(*this);
+        }
+    }
+}
+
+BigInt BigInt::operator*(std::string s){
+    return *this * BigInt(s);
+}
+
+BigInt BigInt::operator*(long long l){
+    return *this * BigInt(l);
+}
+
 BigInt* BigInt::operator+=(BigInt other){
     *this = *this + other;
     return this;

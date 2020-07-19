@@ -3,7 +3,6 @@
 
 int main(){
     BigInt a(123456);
-    std::cout << a.multiply(2333) << std::endl;
     std::cout << a << " " << -a << std::endl;
     a = -a;
     std::cout << a << std::endl;
@@ -66,5 +65,6 @@ int main(){
     a -= "99999999999999999999999999999999999999999999";
     std::cout << a << std::endl;
     std::cout << BigInt(10) - "10" << std::endl;
+    std::cout << -BigInt(-99999999) * -500 << std::endl;
 	return 0;
 }
