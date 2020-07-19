@@ -24,6 +24,16 @@ BigInt BigInt::add(long long l){
     return add(BigInt(l));
 }
 
+void BigInt::clean_leading_zeros(){
+    std::string new_value = value;
+    for(int i = 0; i < value.length() - 1; i++){
+        if(value[i] == '0') new_value = value.substr(i + 1);
+        else break;
+    }
+    value = new_value;
+    if(value == "0") positive = true;
+}
+
 // public
 
 BigInt::BigInt(){
@@ -49,6 +59,7 @@ void BigInt::set_value(std::string s){
     } else {
         value = s;
     }
+    clean_leading_zeros();
 }
 
 void BigInt::set_value(long long l){
