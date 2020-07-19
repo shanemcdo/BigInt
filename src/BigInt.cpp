@@ -220,7 +220,7 @@ BigInt BigInt::operator+(BigInt other){
 BigInt BigInt::operator-(BigInt other){
     if(positive){
         if(other.get_positive()){ // a - b
-            if(abs() > other.abs()) return subtract(other); // a - b
+            if(abs() >= other.abs()) return subtract(other); // a - b
             else return -other.subtract(*this); // - ( b - a )
         } else { // a - ( - b) = a + b
             if(abs() > other.abs()) return add(other); // a + b
@@ -229,7 +229,7 @@ BigInt BigInt::operator-(BigInt other){
     } else {
         if(other.get_positive()){ // ( - a ) - b == -( a + b )
             if(abs() > other.abs()) return -add(other); // -( a + b )
-            else return - other.add(*this); // -( b + a )
+            else return -other.add(*this); // -( b + a )
         } else { // ( - a ) - ( - b ) == -( a - b )
             if(abs() > other.abs()) return -subtract(other); // -( a - b )
             else return other.subtract(*this); // -( -( b - a )) == b - a

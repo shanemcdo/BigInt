@@ -66,5 +66,6 @@ int main(){
     a -= 20;
     a -= "99999999999999999999999999999999999999999999";
     std::cout << a << std::endl;
+    std::cout << BigInt(10) - 10 << std::endl;
 	return 0;
 }
