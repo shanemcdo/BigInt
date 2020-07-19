@@ -50,6 +50,24 @@ BigInt BigInt::subtract(BigInt other){
     return BigInt(result);
 }
 
+BigInt BigInt::multiply(BigInt other){
+    unsigned long long zeros = value.length() - other.get_value().length();
+    std::string aligned = other.align(zeros);
+    BigInt total = 0;
+    for(int i = aligned.length() - 1; i >= zeros; i--){
+        std::string result = "";
+        short carry = 0;
+        for(int j = value.length() - 1; j >= 0; j--){
+            short x = std::stoi(value.substr(j, 1)) * std::stoi(aligned.substr(i, 1)) + carry;
+            carry = x / 10;
+            result = std::to_string(x % 10) + result;
+        }
+        result = std::to_string(carry) + result;
+        total += BigInt(result).align_left(i - 1);
+    }
+    return total;
+}
+
 void BigInt::clean_leading_zeros(){
     std::string new_value = value;
     for(int i = 0; i < value.length() - 1; i++){

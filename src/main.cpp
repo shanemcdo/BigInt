@@ -2,9 +2,8 @@
 #include"BigInt.h"
 
 int main(){
-    BigInt a(1000000000);
-    // a = a.add(3);
-    // a = a.subtract(987654321);
+    BigInt a(55);
+    std::cout << a.multiply(9) << std::endl;
     std::cout << a << " " << -a << std::endl;
     a = -a;
     std::cout << a << std::endl;

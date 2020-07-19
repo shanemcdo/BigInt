@@ -14,6 +14,7 @@ private:
     BigInt subtract(BigInt other);
     void clean_leading_zeros();
 public:
+    BigInt multiply(BigInt other);
     // constructors
     BigInt();
     BigInt(std::string s);
