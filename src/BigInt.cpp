@@ -204,13 +204,13 @@ BigInt* BigInt::operator-=(BigInt other){
     return this;
 }
 
-BigInt* BigInt::operator=(long long l){
-    set_value(l);
+BigInt* BigInt::operator=(std::string s){
+    set_value(s);
     return this;
 }
 
-BigInt* BigInt::operator=(std::string s){
-    set_value(s);
+BigInt* BigInt::operator=(long long l){
+    set_value(l);
     return this;
 }
 
