@@ -12,9 +12,9 @@ private:
     std::string align_left(unsigned long long zeros);
     BigInt add(BigInt other);
     BigInt subtract(BigInt other);
+    BigInt multiply(BigInt other);
     void clean_leading_zeros();
 public:
-    BigInt multiply(BigInt other);
     // constructors
     BigInt();
     BigInt(std::string s);

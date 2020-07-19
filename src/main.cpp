@@ -2,8 +2,8 @@
 #include"BigInt.h"
 
 int main(){
-    BigInt a(10);
-    std::cout << a.multiply(15) << std::endl;
+    BigInt a(123456);
+    std::cout << a.multiply(2333) << std::endl;
     std::cout << a << " " << -a << std::endl;
     a = -a;
     std::cout << a << std::endl;
