@@ -8,5 +8,7 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(23) > BigInt(23);
     std::cout << (b ? "true" : "false") << std::endl;
+    b = BigInt(-24) <= BigInt(-23);
+    std::cout << (b ? "true" : "false") << std::endl;
 	return 0;
 }

@@ -111,3 +111,7 @@ bool BigInt::operator>(BigInt other){
     }
     return false;
 }
+
+bool BigInt::operator<=(BigInt other){
+    return !(*this > other);
+}
