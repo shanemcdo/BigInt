@@ -7,6 +7,7 @@ class BigInt{
 private:
     std::string value;
     bool positive;
+    BigInt align(unsigned long long zeros);
     BigInt add(BigInt other);
 public:
     BigInt();
