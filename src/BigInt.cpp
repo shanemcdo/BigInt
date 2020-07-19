@@ -24,10 +24,6 @@ BigInt BigInt::add(BigInt other){ //only functional when the second number is sm
     return BigInt(result);
 }
 
-BigInt BigInt::add(long long l){
-    return add(BigInt(l));
-}
-
 BigInt BigInt::subtract(BigInt other){
     unsigned long long zeros = value.length() - other.get_value().length();
     std::string aligned = other.align(zeros);
