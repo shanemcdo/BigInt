@@ -14,9 +14,13 @@ BigInt BigInt::add(BigInt other){ //only functional when the second number is sm
     unsigned long long zeros = value.length() - other.get_value().length();
     std::string aligned = other.align(zeros);
     std::string result = "";
-    for(int i = 0; i < value.length(); i++){
-        result += std::to_string(std::stoi(value.substr(i, 1)) + std::stoi(aligned.substr(i, 1)));
+    short carry = 0;
+    for(int i = value.length() - 1; i >= 0; i--){
+        short x = std::stoi(value.substr(i, 1)) + std::stoi(aligned.substr(i, 1)) + carry;
+        carry = x / 10;
+        result = std::to_string(x % 10)+ result;
     }
+    result = std::to_string(carry) + result;
     return BigInt(result);
 }
 
