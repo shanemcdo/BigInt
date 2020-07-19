@@ -51,5 +51,13 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = a >= 10000;
     std::cout << (b ? "true" : "false") << std::endl;
+    b = a == "5000";
+    std::cout << (b ? "true" : "false") << std::endl;
+    b = a == 10000;
+    std::cout << (b ? "true" : "false") << std::endl;
+    b = a != "5000";
+    std::cout << (b ? "true" : "false") << std::endl;
+    b = a != 10000;
+    std::cout << (b ? "true" : "false") << std::endl;
 	return 0;
 }
