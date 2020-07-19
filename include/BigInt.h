@@ -11,6 +11,7 @@ private:
     std::string align(unsigned long long zeros);
     BigInt add(BigInt other);
     BigInt add(long long l);
+    BigInt subtract(BigInt other);
     void clean_leading_zeros();
 public:
     // constructors

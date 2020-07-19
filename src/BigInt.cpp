@@ -28,6 +28,26 @@ BigInt BigInt::add(long long l){
     return add(BigInt(l));
 }
 
+BigInt BigInt::subtract(BigInt other){
+    unsigned long long zeros = value.length() - other.get_value().length();
+    std::string aligned = other.align(zeros);
+    std::string result = "";
+    short carry = 0;
+    for(int i = value.length() - 1; i >= 0; i--){
+        // short a = std::stoi(value.substr(i, 1));
+        // short b = std::stoi(aligned.substr(i, 1));
+        short x = std::stoi(value.substr(i, 1)) - std::stoi(aligned.substr(i, 1)) - carry;
+        if(x < 0){
+            x += 10;
+            carry = 1;
+        } else {
+            carry = 0;
+        }
+        result = std::to_string(x) + result;
+    }
+    return BigInt(result);
+}
+
 void BigInt::clean_leading_zeros(){
     std::string new_value = value;
     for(int i = 0; i < value.length() - 1; i++){

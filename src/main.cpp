@@ -2,8 +2,9 @@
 #include"BigInt.h"
 
 int main(){
-    BigInt a(987654321);
-    // a = a.add(12345679);
+    BigInt a(1000000000);
+    // a = a.add(3);
+    // a = a.subtract(987654321);
     std::cout << a << std::endl;
     bool b = BigInt(-12222) < BigInt(-12224);
     std::cout << (b ? "true" : "false") << std::endl;
