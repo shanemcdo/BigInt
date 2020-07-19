@@ -6,6 +6,8 @@ int main(){
     // a = a.add(3);
     // a = a.subtract(987654321);
     std::cout << a << std::endl;
+    a.set_positive(false);
+    std::cout << a << std::endl;
     bool b = BigInt(-12222) < BigInt(-12224);
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(22) > BigInt(-23);
@@ -18,5 +20,7 @@ int main(){
     std::cout << (b ? "true" : "false") << std::endl;
     b = BigInt(50) != BigInt(50);
     std::cout << (b ? "true" : "false") << std::endl;
+    a = BigInt(500) + BigInt(100);
+    std::cout << a << std::endl;
 	return 0;
 }

@@ -147,3 +147,23 @@ bool BigInt::operator==(BigInt other){
 bool BigInt::operator!=(BigInt other){
     return !(*this == other);
 }
+
+BigInt BigInt::operator+(BigInt other){
+    if(positive){
+        if(other.get_positive()){ // a + b
+            if(*this > other) return add(other);
+            else return other.add(*this);
+        } else { // a + ( - b ) == a - b
+            if(*this > other) return subtract(other);
+            else{ // a - b == - ( b - a)
+                BigInt num = other.subtract(*this);
+                num.set_positive(false);
+                return num;
+            }
+        }
+    } else {
+        if(other.get_positive()){ // ( - a ) + b == b - a
+        } else { // ( - a) + ( - b) == - ( a + b )
+        }
+    }
+}
