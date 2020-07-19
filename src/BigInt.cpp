@@ -360,3 +360,7 @@ BigInt BigInt::abs(){
     if(positive) return *this;
     return -(*this);
 }
+
+long long length(){
+    return value.length();
+}

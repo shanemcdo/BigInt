@@ -68,6 +68,7 @@ public:
     BigInt* operator=(long long l);
     // other
     BigInt abs();
+    long long length();
 };
 
 #endif //BIG_INT_H
