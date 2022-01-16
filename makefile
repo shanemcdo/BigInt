@@ -8,7 +8,7 @@ BigInt.o: src/BigInt.cpp bin
 	g++ src/BigInt.cpp -c -o bin/BigInt.o -I include
 
 clean:
-	rm bin/*
+	rm bin
 
 bin:
 	mkdir bin
