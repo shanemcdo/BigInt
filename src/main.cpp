@@ -1,6 +1,17 @@
 #include<iostream>
 #include"BigInt.h"
 
+BigInt factorial(BigInt n){
+    if(n < 0)
+        throw "Expected a value greater than or equal to 0";
+    if(n <= 1)
+        return 1;
+    BigInt result = 1;
+    for(BigInt i = 2; i <= n; i++)
+        result *= i;
+    return result;
+};
+
 int main(){
     BigInt a(123456);
     for(int i = 0; i < 64; i++){
@@ -80,5 +91,7 @@ int main(){
     std::cout << --a << std::endl;
     a = 2;
     std::cout << a.pow("100") << std::endl;
+    for(BigInt i = 0; i < 1000; i++)
+        std::cout << factorial(i) << std::endl;
 	return 0;
 }
