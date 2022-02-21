@@ -1,18 +1,19 @@
-all: bin/main.o bin/BigInt.o
-	g++ bin/*.o -o bin/test.exe -I include
-	@echo
+TARGET=bin/test
+CC=g++
+CPPFLAGS=-Iinclude -Wall
+OBJECTS = $(patsubst src/%.cpp,bin/%.o,$(wildcard src/*.cpp))
 
-bin/main.o: src/main.cpp
-	g++ src/main.cpp -c -o bin/main.o -I include
+$(TARGET): $(OBJECTS)
+	$(CC) $(CPPFLAGS) -o $@ $^
 
-bin/BigInt.o: src/BigInt.cpp
-	g++ src/BigInt.cpp -c -o bin/BigInt.o -I include
+bin/%.o: src/%.cpp bin
+	$(CC) $(CPPFLAGS) -c -o $@ $<
 
 clean:
 	rm bin/*
 
-new:
+bin:
 	mkdir bin
 
 test: all
-	bin/test.exe
+	$(TARGET)
